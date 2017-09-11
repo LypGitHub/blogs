@@ -1,0 +1,22 @@
+{
+  "name": "blogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "rxjs": "node js/rxjs-learn.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LypGitHub/blogs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LypGitHub/blogs/issues"
+  },
+  "homepage": "https://github.com/LypGitHub/blogs#readme",
+  "dependencies": {
+    "rxjs": "^5.4.3"
+  }
+}
