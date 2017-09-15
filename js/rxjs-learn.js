@@ -3,12 +3,12 @@
  * @Author: Lyp 
  * @Date: 2017-09-11 10:25:13
  * @Last Modified by: Lyp
- * @Last Modified time: 2017-09-11 10:37:45
+ * @Last Modified time: 2017-09-13 19:24:54
  */
 
  
 const Rx =  require('rxjs/Rx')
-const { Observable, Subject } = Rx
+const { Observable } = Rx
 
 /**
  * 创建观察者，定时推流
@@ -20,6 +20,14 @@ const source = Observable.interval(1000)
     console.log('source: ', x)
     return x * 2
   })
+
+/**
+ * Observable.defaultIfEmpty
+ * 当流的数据不确定是否为空时，使用defaultIfEmpty设置默认值
+ */
+
+const sourceDefault = Observable.of().defaultIfEmpty(100)
+sourceDefault.subscribe(x => console.log('sourceDefault', x))
 
 source.subscribe(x => console.log('subscribe: ', x))
 
