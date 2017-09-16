@@ -3,7 +3,7 @@
  * @Author: Lyp 
  * @Date: 2017-09-15 11:06:45 
  * @Last Modified by: Lyp
- * @Last Modified time: 2017-09-15 11:07:10
+ * @Last Modified time: 2017-09-15 11:25:07
  */
 
 
@@ -42,6 +42,13 @@ class Module {
     return this.modules[name] = fn;
   }
 
+  /**
+   * 异常捕获，返回Promise
+   * 
+   * @param {any} err 
+   * @returns 
+   * @memberof Module
+   */
   error(err) {
     const error = new Error(err || '异常信息')
     return ((error) => {
@@ -49,6 +56,14 @@ class Module {
     })(error);
   }
 
+  /**
+   * 创建函数体，将加载的模块传入回调
+   * 
+   * @param {any} modules 
+   * @param {any} cb 
+   * @returns 
+   * @memberof Module
+   */
   createFn(modules, cb) {
     const args = modules.map(item => {
       const fn = this.get(item) ? this.get(item) : {};
@@ -57,6 +72,14 @@ class Module {
     return cb.apply(this, args);
   }
 
+  /**
+   * 声明并创建模块
+   * 
+   * @param {any} name 
+   * @param {any} modules 
+   * @param {any} cb 
+   * @memberof Module
+   */
   define(name, modules, cb) {
     this.registModule(name, this.createFn(modules, cb))
   }
