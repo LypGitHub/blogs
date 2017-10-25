@@ -3,7 +3,7 @@
  * @Author: Lyp 
  * @Date: 2017-09-11 10:25:13
  * @Last Modified by: Lyp
- * @Last Modified time: 2017-09-13 19:24:54
+ * @Last Modified time: 2017-09-19 14:49:40
  */
 
  
@@ -44,3 +44,27 @@ const totalSource = Observable.combineLatest(source, source1, (interval, number)
 }))
 
 totalSource.subscribe(x => console.log('combineLastest: ', x))
+
+
+/**
+ * 类似实现??
+ */
+
+class Observable1 {
+  constructor(values) {
+    this.values = values
+  }
+
+  of(...array) {
+    // 不管传入什么值，都转为数组形式存
+    return new Observable1(array)
+  }
+
+  defaultIfEmpty(...array) {
+    // 不存在的时候使用默认值
+    if (!this.values.length) {
+      this.values = array
+    }
+    return this;
+  }
+}

@@ -3,10 +3,19 @@
  * @Author: Lyp 
  * @Date: 2017-09-15 11:06:45 
  * @Last Modified by: Lyp
- * @Last Modified time: 2017-09-15 11:25:07
+ * @Last Modified time: 2017-10-24 14:04:12
  */
 
 
+class LoadScript {
+  constructor () {
+    this.path = ''
+  }
+
+  load (module) {
+    
+  }
+}
 class Module {
   constructor() {
     this.modules = {};
@@ -16,7 +25,7 @@ class Module {
    * 获取模块
    * 
    * @param {any} name 
-   * @returns 
+   * @returns
    * @memberof Module
    */
   get(name) {
