@@ -1,7 +1,7 @@
-#### 平时遇到的一些知识点收录
+### 平时遇到的一些知识点收录
 
+#### 关于任务队列的执行顺序 [规范](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)
 ```
-  ### 关于任务队列的执行顺序 https://html.spec.whatwg.org/multipage/webappapis.html#event-loops
   macrotasks: script(整体代码),setTimeout, setInterval, setImmediate, I/O, UI rendering
   microtasks: process.nextTick, Promises, Object.observe, MutationObserver
 
@@ -10,8 +10,9 @@
 ```
 
 
+#### 关于页面可见性的收录 [api文档](http://devdocs.io/dom/page_visibility_api)
+
 ```javascript
-  ### 关于页面可见性的收录 http://devdocs.io/dom/page_visibility_api
   // polyfill
   var hidden = null,
       visibilityChange = null
