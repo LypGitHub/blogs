@@ -25,4 +25,7 @@ lazyLoadArray.reduce((item, url) => {
 .then((data) => {
   console.log('all done: ', data)
 })
+.catch(err => {
+  console.log('some image source fail load ==> ', url)
+})
 
