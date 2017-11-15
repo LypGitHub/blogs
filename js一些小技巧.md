@@ -28,6 +28,7 @@
     visibilityChange = 'webkitvisibilitychange'
   }
 
+  // example scene
   var videoElement = document.getElementById("videoElement");
 
   // If the page is hidden, pause the video;
